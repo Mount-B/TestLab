@@ -1,11 +1,11 @@
-<!-- 说明：报告中的「学号」与第二节 2.1「多人协同开发经历」请按本人真实情况填写 / 核对。 -->
+<!-- 说明：报告第二节 2.1「多人协同开发经历」请按本人真实情况核对 / 补充。 -->
 
 # 计算机系统基础（2026 年秋季学期）Lab0：GitLab 实验报告
 
 | 项目 | 内容 |
 | --- | --- |
 | 姓名 / GitHub 账号 | Mount-B |
-| 学号 | <!-- 请填写学号 --> |
+| 学号 | 25300680098 |
 | 个人仓库 | <https://github.com/Mount-B/TestLab> |
 | 实验日期 | 2026 年 10 月 9 日 |
 | 实验环境 | Windows 11（10.0.26100）+ WSL2 Ubuntu 26.04.1 LTS（内核 6.18.40.1-microsoft-standard-WSL2）<br>git 2.53.0（WSL）、git 2.52.0（Windows）、MinGW-w64 gcc 16.2.0（本地编译校验） |
@@ -23,9 +23,10 @@
 | 任务 4：新建 `feature` 分支，两个分支各改一次 `main.c` 并提交，合并时制造并解决冲突 | 10 + 10 | 见 3.3 节，提交 `42c4efa`、`f9701b9`、合并提交 `d091aa9` |
 | 任务 5：在 `main` 分支提交实验报告（Markdown） | 单独评分 | 本文件 `report.md` |
 
-最终提交历史（`main` 分支，本报告所在的提交为 `429e21b`）：
+最终提交历史（`main` 分支）：
 
 ```text
+*   dc03bf5 docs(report): add push and CI verification figure, normalize file modes
 *   429e21b docs(report): add the Lab0 experiment report with terminal screenshots
 *   d091aa9 Merge branch 'feature'
 |\
@@ -291,6 +292,7 @@ git push origin main
 ## 附录 B：提交历史
 
 ```text
+dc03bf5 docs(report): add push and CI verification figure, normalize file modes
 429e21b docs(report): add the Lab0 experiment report with terminal screenshots
 d091aa9 Merge branch 'feature'
 42c4efa feat(feature): greet from the feature branch
