@@ -23,9 +23,10 @@
 | 任务 4：新建 `feature` 分支，两个分支各改一次 `main.c` 并提交，合并时制造并解决冲突 | 10 + 10 | 见 3.3 节，提交 `42c4efa`、`f9701b9`、合并提交 `d091aa9` |
 | 任务 5：在 `main` 分支提交实验报告（Markdown） | 单独评分 | 本文件 `report.md` |
 
-最终提交历史（`main` 分支）：
+最终提交历史（`main` 分支，本报告所在的提交为 `429e21b`）：
 
 ```text
+*   429e21b docs(report): add the Lab0 experiment report with terminal screenshots
 *   d091aa9 Merge branch 'feature'
 |\
 | * 42c4efa feat(feature): greet from the feature branch
@@ -179,13 +180,30 @@ Hello from the main branch and the feature branch!
 
 *图 4：编译无警告，输出与模板原始输出不同，满足 autograder 的判分条件。*
 
-### 3.5 推送到 GitHub
+### 3.5 推送到 GitHub 与自动评分结果
 
 ```bash
 git push origin main
+# To github.com:Mount-B/TestLab.git
+#    819fc15..429e21b  main -> main
 ```
 
-推送后本地 `main` 与 `origin/main` 同步，GitHub Actions 中的 `Autograding Tests` 工作流会在每次 push 时自动运行。**提交入口：** 按文档要求，将个人仓库链接 <https://github.com/Mount-B/TestLab> 提交到 E-Learning 平台。
+推送后本地 `main` 与 `origin/main` 指向同一个提交，`git status` 显示工作区干净。仓库自带的 `.github/workflows/classroom.yml` 会在 push 时自动运行 `Autograding Tests` 工作流，本次运行的判分点步骤 `Hello World Modified` 结果为 **success**（该步骤的内部逻辑是：编译并运行程序，若输出与 `Hello, world!` 相同则判 FAIL，不同则判 PASS，本次为 PASS）。
+
+```text
+run-autograding-tests   status=completed  conclusion=success
+  Checkout code ................. completed/success
+  Hello World Modified .......... completed/success   <- 判分点
+  Autograding Reporter .......... completed/success
+  Export grade.json ............. completed/success
+  Upload autograding result ..... completed/success
+```
+
+![推送结果与自动评分](assets/fig5-push-verify.png)
+
+*图 5：推送成功后本地与远程一致、完整的提交图，以及 GitHub Actions 自动评分（`Autograding Tests`）的运行结果。*
+
+**提交入口：** 按文档要求，将个人仓库链接 <https://github.com/Mount-B/TestLab> 提交到 E-Learning 平台。
 
 ---
 
@@ -273,6 +291,7 @@ git push origin main
 ## 附录 B：提交历史
 
 ```text
+429e21b docs(report): add the Lab0 experiment report with terminal screenshots
 d091aa9 Merge branch 'feature'
 42c4efa feat(feature): greet from the feature branch
 f9701b9 feat(main): greet from the main branch
